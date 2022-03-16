@@ -58,8 +58,8 @@ export default class App extends React.Component {
 
   changeState = () => {
     this.setState({
-      name: 'alis vesli',
-      year: 199133
+      name: 'ali veli',
+      year: 1991
     }, () => {
       alert('Bilgiler Güncellendi');
     }

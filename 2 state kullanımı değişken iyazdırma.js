@@ -56,25 +56,28 @@ export default class App extends React.Component {
       )
     }*/
 
-  changeState = () => {
-    this.setState({
-      name: 'alis vesli',
-      year: 199133
-    }, () => {
-      alert('Bilgiler Güncellendi');
-    }
-    );
-  };
+changeState=()=> {
+  this.setState({
+    name:'ali veli',
+    year:1991
+  }, ()=>{
+    alert('Bilgiler Güncellendi');
+  }
+  );
+};
 
   render() {
     const { name, year } = this.state;
     return (  //state veri getirme 2.yöntem
 
-      <View style={[{ flex: 1, paddingTop: 100 }]}>
+      <View style={[{ flex: 1,paddingTop:100 }]}>
 
-        <FirstComponent changeState={this.changeState} name={name} year={year}/>
+        <Text>{name} {year}</Text>
 
-       
+        <TouchableOpacity onPress={() => this.changeState()}>
+          <Text > Değiştir</Text>
+        </TouchableOpacity>
+
 
 
 

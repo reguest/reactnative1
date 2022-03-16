@@ -1,29 +1,38 @@
-import React,{Component} from 'react';
-import {View,Text} from 'react-native';
+import React, { Component } from 'react';
+
+import { View, Text, TouchableOpacity } from 'react-native';
 
 
-
+/*
 // 1. component cagırma yontemı
-const FirstComponent = ({name,text}) => {
-    return(
+const FirstComponent = ({ name, year,changeState }) => {
+    return (
         <View>
-            <Text>{name}    {text}</Text>
+            <Text>{name}    {year}</Text>
+            <TouchableOpacity onPress={changeState}>
+               <Text>Değiştir</Text>
+           </TouchableOpacity>
         </View>
     )
 }
 
-export default FirstComponent;
+export default FirstComponent;*/
+
+export default class FirstComponent extends React.Component {
+    render() {
+ 
+        const { name, year, changeState } = this.props;
+        return (
+            <View>
+                <Text>{name}   {year}</Text>
+                <TouchableOpacity onPress={changeState}>
+                    <Text>Değiştir</Text>
+                </TouchableOpacity>
+            </View>
 
 
-/* 2. component cagırma yontemı
-export default class FirstComponent extends React.Component{
 
-render(){
-    return (
-        <View>
-        <Text>First Component</Text>
-    </View>
-    )
+         
+        )
+    }
 }
-}
-*/
