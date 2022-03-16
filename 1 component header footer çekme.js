@@ -28,50 +28,29 @@ import {
 
 //dışarı aktarma 1 çok kullanılan bu
 export default class App extends React.Component {
-  //state
-  // komponent olusturuldugun o komponenın ıcerısınde veri tutulacak olan 
-  // objedır
-
-  constructor(){
-    super();
-    this.state={
-      name:'Orhan ince state ',
-      year:1995
-    };
-  }
-/*
-  render() {
-    return (//state veri getirme 1.yöntem
-
-      <View style={[{ flex: 1 }]}>
-
-
-         <View style={{ flex: 1}}>
-          <Text>{this.state.name} {this.state.year}</Text>
-        </View>
-
-
-      </View>
-    )
-  }*/
+  //flex-direction : column
+  //justify-content : flex-start , flex-and, center, space-betwen, space-around
+  //align-items
+  //flex-wrap //sıgmayanı asagı alır
 
   render() {
-    const {name,year}=this.state;
-    return (  //state veri getirme 2.yöntem
+    return (
 
       <View style={[{ flex: 1 }]}>
 
 
         {/* column içerisindeki view'ı sona alır flex-end, center */}
         <View style={{ flex: 1}}>
-          <Text>{name} {year}</Text>
+           <FirstComponent 
+             name={"Orhan ince"} 
+             text={"Hoşgeldiniz"}
+           />
         </View>
 
 
       </View>
     )
   }
-
 }
 
 
