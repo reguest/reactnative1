@@ -7,93 +7,54 @@
  */
 
 import React, { Component } from 'react';
+import { TouchableOpacity } from 'react-native';
 import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
   View,
-  Text,
-  StatusBar,
-
+  Text
 } from 'react-native';
-import FirstComponent from './FirstComponent';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 
-//dışarı aktarma 1 çok kullanılan bu
+
 export default class App extends React.Component {
-  //state
-  // komponent olusturuldugun o komponenın ıcerısınde veri tutulacak olan 
-  // objedır
 
-  constructor(){
+  constructor() { // 1. sırada
     super();
-    this.state={
-      name:'Orhan ince state ',
-      year:1995
-    };
+    this.state = {
+      text: ''
+    }
+    console.log("Contructor Çalıştı");
   }
-/*
-  render() {
-    return (//state veri getirme 1.yöntem
 
-      <View style={[{ flex: 1 }]}>
+  componentDidMount() { //3. sraıda
+    console.log('Component did mount çalıştı');
 
-
-         <View style={{ flex: 1}}>
-          <Text>{this.state.name} {this.state.year}</Text>
-        </View>
-
-
-      </View>
-    )
-  }*/
-
-  render() {
-    const {name,year}=this.state;
-    return (  //state veri getirme 2.yöntem
-
-      <View style={[{ flex: 1 }]}>
-
-
-        {/* column içerisindeki view'ı sona alır flex-end, center */}
-        <View style={{ flex: 1}}>
-          <Text>{name} {year}</Text>
-        </View>
-
-
-      </View>
-    )
   }
+  shouldComponentUpdate() {
+   // console.log('Component shouldComponentUpdate çalıştı');
+   return true;
+  }
+  componentDidUpdate() {
+    console.log('Component DidUpdate çalıştı');
+  }
+  componentWillUnmount() {
+    console.log('Component un mount çalıştı');
+  }
+  render() { //2. sırada
+    console.log('Render çalıştı');
+    return (<View>
+      <TouchableOpacity onPress={()=>this.setState({text:'a'})}>
+        <Text>Değiştir</Text>
+      </TouchableOpacity>
+    </View>)
+  }
+
 
 }
 
 
 
-const style = StyleSheet.create({
-  welcomeArea: {
-    paddingTop: 150,
-    backgroundColor: 'red',
-    flex: 1,
-
-  },
-
-  welcomeText: {
-    paddingTop: 10,
-    color: 'white',
-    fontSize: 20,
-  }
 
 
 
 
-
-
-});
 
